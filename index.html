@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommendation System</title>
+</head>
+
+<style type="text/css">
+    body{
+        background-color: rgb(164, 146, 181);
+    }
+    .title{
+        font-size:50px;
+        margin-block-start: 48px;
+        margin-block-end: 20px;
+        margin-inline-start: 700px;
+        margin-inline-end: 520px;
+    }
+   .container{
+        display: flex;
+        flex-flow: row wrap;    
+    }
+
+    .column{
+        display:flex;
+        flex: 25%;
+        padding:45px;
+    }
+
+    .text-column{
+        display: flex;
+        flex-flow: column wrap;   
+    }
+    p{
+        padding:0px;
+        margin-block-start: 8px;
+        margin-block-end: 8px;
+        margin-inline-start: 5px;
+        margin-inline-end: 0px;
+    }
+   
+</style>
+
+<body>
+    <div class="input">
+        <h1 class="title">Popular Books</h1>
+
+    <nav class="navbar">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recomm">Recommend</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        {%for i in range(0,len)%}
+        <div class="column">
+            <img src="{{image[i]}}">
+            <div class="text-column">
+                <p>{{book_title[i]}}</p>
+                <h4>{{book_author[i]}}</h4>
+                <p>votes-{{votes[i]}}</p>
+                <p>Rating-{{avg_rating[i]}}</p>
+            </div>
+        </div>
+        {%endfor%}  
+    </div>   
+</body>
+</html>
